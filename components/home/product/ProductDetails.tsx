@@ -142,13 +142,13 @@ export default function ProductDetails({ producto }: Props) {
 
     return (
         <>
-            <article className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 max-w-7xl mx-auto px-4 lg:px-0 ">
+            <article className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 max-w-7xl mx-auto ">
                 <div className="lg:col-span-8">
                     <ImagenesProductoCarousel images={variantImages} />
                 </div>
 
                 <section className="lg:col-span-4 sticky top-24 self-start">
-                    <div className="bg-white p-6 space-y-6">
+                    <div className="bg-white space-y-6">
                         <header className="space-y-4 border-b border-gray-100 pb-6">
                             <h1 className="text-2xl font-semibold tracking-tight text-gray-900">
                                 {producto.nombre}
@@ -164,14 +164,14 @@ export default function ProductDetails({ producto }: Props) {
                                         <span className="line-through text-gray-400 text-sm">
                                             S/ {precioComparativo.toFixed(2)}
                                         </span>
-                                        <span className="bg-gray-900 text-white text-xs px-2 py-1 rounded-md">
+                                        <span className="bg-gray-900 text-white text-xs px-2 py-1 ">
                                             -{Math.round(((precioComparativo - precio) / precioComparativo) * 100)}%
                                         </span>
                                     </div>
                                 )}
                                 {stock > 0 ? (
                                     <span className="ml-auto ">
-                                        
+
                                     </span>
                                 ) : (
                                     <span className="ml-auto text-sm text-red-600 font-medium">
@@ -190,7 +190,7 @@ export default function ProductDetails({ producto }: Props) {
                                     </Link>
                                 )}
 
-                                
+
                             </div>
                         </header>
 
@@ -266,14 +266,14 @@ export default function ProductDetails({ producto }: Props) {
                             );
                         })}
 
-                          {!producto.variants?.length && colorAtributo && (
-                                <div className="flex items-center  gap-3 text-sm text-gray-600 ">
-                                    <span>Colores disponibles:</span>
-                                    {Array.isArray(colorAtributo)
-                                        ? colorAtributo.map((c: string) => <ColorCircle key={c} color={c} />)
-                                        : <ColorCircle color={colorAtributo} />}
-                                </div>
-                            )}
+                        {!producto.variants?.length && colorAtributo && (
+                            <div className="flex items-center  gap-3 text-sm text-gray-600 ">
+                                <span>Colores disponibles:</span>
+                                {Array.isArray(colorAtributo)
+                                    ? colorAtributo.map((c: string) => <ColorCircle key={c} color={c} />)
+                                    : <ColorCircle color={colorAtributo} />}
+                            </div>
+                        )}
 
                         <section className="flex items-center border-gray-100">
                             <div className="flex-1 hidden md:block">
@@ -300,23 +300,18 @@ export default function ProductDetails({ producto }: Props) {
                     >
                         <AccordionItem value="info" className="">
                             <AccordionTrigger
-                                className="px-6 py-4 
+                                className=" py-4 
       "
                             >
                                 Información de compra
                             </AccordionTrigger>
 
-                            <AccordionContent className="px-6 space-y-6">
+                            <AccordionContent className=" space-y-2">
                                 {/* Envíos */}
                                 <div className="space-y-2 leading-relaxed text-xs">
+
                                     <p>
-                                        Envíos <span className="font-medium text-zinc-500">gratis y contraentrega</span>.
-                                    </p>
-                                    <p>
-                                        Envíos a todo el Perú mediante{' '}
-                                        <span className="font-medium text-zinc-500">
-                                            Shalom
-                                        </span>.
+                                        Envíos a todo el Perú
                                     </p>
                                     <p className="inline-block rounded-full border border-gray-200 px-4 py-1 text-[12px] text-gray-600">
                                         {producto.diasEnvio
