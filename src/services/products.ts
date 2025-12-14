@@ -212,7 +212,7 @@ export const getNewProducts = async () => {
 };
 
 export const getDestacadosProducts = async () => {
-    const url = `${process.env.API_URL}/products/destacados/all?limit=5`;
+    const url = `${process.env.API_URL}/products/destacados/all?limit=4`;
 
     const req = await fetch(url, {
         method: 'GET',

@@ -91,12 +91,12 @@ export default function FiltrosClient({ categorySlug, attributes }: Props) {
     };
 
     return (
-        <aside className="py-4 border-gray-200">
+        <aside className="py-4 border-gray-200 text-gray-600">
             {/* Botón limpiar filtros */}
             <div className="flex justify-end mb-4">
                 <button
                     onClick={clearFilters}
-                    className="flex items-center gap-1 text-xs text-gray-100 hover:text-red-300 transition"
+                    className="flex items-center gap-1 text-xs  transition"
                 >
                     <MdClear size={18} />
                     Limpiar filtros

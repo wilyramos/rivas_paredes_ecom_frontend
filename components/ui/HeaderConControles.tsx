@@ -5,39 +5,55 @@ import type { ButtonGroupProps } from "react-multi-carousel";
 
 export default function HeaderConControles({ next, previous }: ButtonGroupProps) {
     return (
-        <div className="flex items-start justify-end mb-10 md:mb-12 pr-1">
-            <div className="flex gap-3">
+        <div className="flex items-center justify-end">
+            <div className="flex gap-4">
                 <button
                     onClick={() => previous?.()}
-                    className="
-                        p-1 rounded-full 
-                        border  
-                        hover:bg-black hover:border-black 
-                        shadow-sm
-                        group transition-all duration-300
-                    "
                     aria-label="Anterior"
+                    className="
+            group
+            w-9 h-9
+            flex items-center justify-center
+            rounded-full
+            border border-black/20
+            bg-white
+            transition-all duration-300
+            hover:bg-black hover:border-black
+          "
                 >
                     <ArrowLeft
-                        className="w-5 h-5 text-neutral-700 group-hover:text-white transition-colors"
-                        strokeWidth={1.3}
+                        className="
+              w-4 h-4
+              text-black
+              transition-colors duration-300
+              group-hover:text-[#c79748]
+            "
+                        strokeWidth={1.4}
                     />
                 </button>
 
                 <button
                     onClick={() => next?.()}
-                    className="
-                        p-1 rounded-full 
-                        border  
-                        hover:bg-black hover:border-black 
-                         
-                        group transition-all duration-300
-                    "
                     aria-label="Siguiente"
+                    className="
+            group
+            w-9 h-9
+            flex items-center justify-center
+            rounded-full
+            border border-black/20
+            bg-white
+            transition-all duration-300
+            hover:bg-black hover:border-black
+          "
                 >
                     <ArrowRight
-                        className="w-5 h-5 text-neutral-700 group-hover:text-white transition-colors"
-                        strokeWidth={1.3}
+                        className="
+              w-4 h-4
+              text-black
+              transition-colors duration-300
+              group-hover:text-[#c79748]
+            "
+                        strokeWidth={1.4}
                     />
                 </button>
             </div>

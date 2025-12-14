@@ -1,62 +1,11 @@
 // app/brands/[slug]/page.tsx
 import { getBrandBySlug } from '@/src/services/brands';
-import type { Metadata } from 'next';
-import { metadata as globalMetadata } from '@/app/layout'; // mismo patrón que en /store
 
 type Params = Promise<{
     slug: string;
 }>;
 
 type SearchParams = Promise<Record<string, string | string[] | undefined>>;
-
-// Generación dinámica de metadata para cada marca
-export async function generateMetadata(
-    { params }: { params: Promise<Params> }
-): Promise<Metadata> {
-    const { slug } = await params;
-    const brand = await getBrandBySlug(slug);
-    if (!brand) {
-        return {
-            title: 'Marca no encontrada | GoPhone',
-            description: 'La marca solicitada no existe en GoPhone.',
-        };
-    }
-
-    const title = `${brand.nombre} | GoPhone`;
-    const description = `Productos de la marca ${brand.nombre} en GoPhone: variedad, soporte y las mejores ofertas.`;
-
-    return {
-        ...globalMetadata,
-        title: {
-            default: title,
-            template: `%s | ${brand.nombre} | GoPhone`,
-        },
-        description,
-        openGraph: {
-            ...globalMetadata.openGraph,
-            title,
-            description,
-            url: `https://gophone.pe/marca/${slug}`,
-            images: [
-                {
-                    url: brand?.logo ?? 'https://gophone.pe/logobw.svg',
-                    width: 1200,
-                    height: 630,
-                    alt: `Marca ${brand.nombre}`,
-                },
-            ],
-        },
-        twitter: {
-            ...globalMetadata.twitter,
-            title,
-            description,
-            images: [brand?.logo ?? 'https://gophone.pe/favicon.ico'],
-        },
-        alternates: {
-            canonical: `https://gophone.pe/marca/${slug}`,
-        },
-    };
-}
 
 // ------- Page -------
 import { getProductsByBrandSlug } from '@/src/services/products';

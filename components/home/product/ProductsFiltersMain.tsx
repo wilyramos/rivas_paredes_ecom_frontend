@@ -98,15 +98,15 @@ export default function ProductsFiltersMain({ filters }: ProductsFiltersProps) {
     };
 
     return (
-        <aside className="w-full shadow-xs rounded-xs bg-white">
-            <div className="flex justify-between items-center mb-3 bg-black rounded-t-md">
-                <h2 className="text-lg flex items-center gap-2 px-4 py-2 font-semibold text-white">
+        <aside className="w-full shadow-xs rounded-xs">
+            <div className="flex justify-between items-center mb-3 ">
+                <h2 className="text-lg flex items-center gap-2 px-4 py-2 font-semibold ">
                     <LuListFilter />
                     Filtros
                 </h2>
                 <button
                     onClick={clearFilters}
-                    className="text-sm text-gray-200 underline px-4 cursor-pointer hover:text-white transition-colors"
+                    className="text-sm text-gray-600 underline px-4 cursor-pointer hover:text-gray-800 transition-colors"
                 >
                     Limpiar
                 </button>

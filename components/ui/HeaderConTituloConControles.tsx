@@ -4,28 +4,37 @@ import type { ButtonGroupProps } from "react-multi-carousel";
 import HeaderConControles from "./HeaderConControles";
 
 interface Props extends ButtonGroupProps {
-    title: string;
-    subtitle?: string;
+  title: string;
+  subtitle?: string;
 }
 
-export default function HeaderConTituloConControles({ title, subtitle, next, previous }: Props) {
-    return (
-        <div className="flex items-start justify-between mb-10 md:mb-12">
-            <div>
-                <h2 className="text-lg md:text-xl font-semibold mb-2 text-gray-800">
-                    {title}
-                </h2>
-                <div className='border-2 border-b border-gray-300 mb-2 w-20 md:w-24'>
-                </div>
+export default function HeaderConTituloConControles({
+  title,
+  subtitle,
+  next,
+  previous,
+}: Props) {
+  return (
+    <div className="flex items-end justify-between mb-12 md:mb-16">
+      <div>
+        {/* Título – estilo moda premium */}
+        <h2 className="text-xl md:text-2xl font-light tracking-wide text-black mb-3">
+          {title}
+        </h2>
 
-                {subtitle && (
-                    <p className="text-neutral-500 text-sm uppercase tracking-wider">
-                        {subtitle}
-                    </p>
-                )}
-            </div>
+        {/* Línea elegante */}
+        <div className="h-px w-24 md:w-32 bg-black mb-3" />
 
-            <HeaderConControles next={next} previous={previous} />
-        </div>
-    );
+        {/* Subtítulo */}
+        {subtitle && (
+          <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-neutral-500">
+            {subtitle}
+          </p>
+        )}
+      </div>
+
+      {/* Controles minimalistas */}
+      <HeaderConControles next={next} previous={previous} />
+    </div>
+  );
 }

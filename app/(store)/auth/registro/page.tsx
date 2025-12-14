@@ -1,13 +1,8 @@
-import type { Metadata } from "next";
 import RegisterForm from "@/components/auth/RegisterForm";
 
 
 
-export const metadata: Metadata = {
-    title: "GoPhone  - Registro de cuenta",
-    description: "GoPhone  - Registro de cuenta",
-    keywords: "registro, GoPhone , cuenta",
-};
+
 
 export default function PageRegistro() {
 

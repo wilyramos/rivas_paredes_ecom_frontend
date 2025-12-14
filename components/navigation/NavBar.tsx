@@ -1,5 +1,3 @@
-// frontend/components/navigation/NavBar.tsx
-
 import Link from "next/link";
 import Logo from "../ui/Logo";
 import ButtonShowCart from "../ui/ButtonShowCart";
@@ -13,63 +11,60 @@ import ButtonSearchMobile from "./ButtonSearchMobile";
 export default function NavBar() {
     return (
         <NavBarClient>
-            {/* HEADER FIJO */}
-            <header className="sticky top-0 z-50 bg-white  ">
-                <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-1 ">
+            <header className="relative w-full">
+                <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-2 min-h-[64px]">
 
-                    {/* Mobile menu button */}
-                    <div className="md:hidden flex items-center">
-                        <ServerSheetMobile />
+                    {/* --- IZQUIERDA: Menú Mobile + Categorías Desktop --- */}
+                    <div className="flex items-center gap-4 z-20">
+                        {/* Mobile menu button */}
+                        <div className="md:hidden">
+                            <ServerSheetMobile />
+                        </div>
+
+                        {/* Desktop: Categorías fijas a la izquierda */}
+                        <div className="hidden md:block">
+                            <ServerCategorias />
+                        </div>
                     </div>
 
-                    {/* Mobile logo centered */}
-                    <div className="md:hidden absolute left-1/2 -translate-x-1/2 z-10">
-                        <Link href="/" className="flex items-center ">
+                    {/* --- CENTRO: Logo (Posición Absoluta) --- */}
+                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                        <Link href="/" className="flex items-center">
                             <Logo />
                         </Link>
                     </div>
 
-                    {/* Desktop logo */}
-                    <Link href="/" className="hidden md:flex items-center">
-                        <Logo />
-                    </Link>
-
-                    {/* Desktop search */}
-                    <nav className="hidden md:flex flex-1 justify-center px-4">
-                        <div className="max-w-xl w-full">
-                            <ButtonSearchFormStore />
-                        </div>
-                    </nav>
-
-                    {/* Desktop actions */}
-                    <div className="hidden md:flex items-center gap-1">
-                        <Link
-                            href="/auth/registro"
-                            className="flex items-center gap-1 transition px-2 py-1"
-                            aria-label="Cuenta"
-                        >
-                            <div className="hover:bg-gray-100 rounded-full p-2">
-                                <AiOutlineUser className="h-6 w-6" />
+                    {/* --- DERECHA: Search + User + Cart --- */}
+                    <div className="flex items-center gap-2 z-20">
+                        
+                        {/* Desktop: Search Form & User */}
+                        <div className="hidden md:flex items-center gap-2">
+                            <div className="w-64 lg:w-80">
+                                <ButtonSearchFormStore />
                             </div>
-                        </Link>
 
+                            <Link
+                                href="/auth/registro"
+                                className="flex items-center gap-1 transition px-2 py-1"
+                                aria-label="Cuenta"
+                            >
+                                <div className="hover:bg-gray-100 rounded-full p-2">
+                                    <AiOutlineUser className="h-6 w-6" />
+                                </div>
+                            </Link>
+                        </div>
+
+                        {/* Mobile: Search Icon only */}
+                        <div className="md:hidden">
+                            <ButtonSearchMobile />
+                        </div>
+
+                        {/* Cart Button (Always visible) */}
                         <ButtonShowCart />
                     </div>
 
-                    <div className="md:hidden flex items-center gap-2">
-                        <ButtonSearchMobile />
-                        <ButtonShowCart />
-                    </div>
                 </div>
             </header>
-
-            {/* CATEGORÍAS FIJAS EN DESKTOP */}
-            <div className="hidden md:block sticky top-16 z-40">
-                <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center">
-                    <ServerCategorias />
-                </div>
-            </div>
-
         </NavBarClient>
     );
 }

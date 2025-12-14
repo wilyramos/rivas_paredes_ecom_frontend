@@ -13,7 +13,7 @@ type ProductsResultProps = {
     };
 };
 
-export default async function ProductsResultsAdmin({
+export default async function ProductsResult({
     currentPage,
     itemsPerPage,
     params

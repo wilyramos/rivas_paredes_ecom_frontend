@@ -41,12 +41,12 @@ export default function ContactoSoportePage() {
                         <div>
                             <p className="font-medium">WhatsApp</p>
                             <a
-                                href="https://api.whatsapp.com/send?phone=51925054636&text=Hola%20Gophone,%20necesito%20ayuda"
+                                href="https://api.whatsapp.com/send?phone=51924221553&text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-black hover:underline"
                             >
-                                +51 925 054 636
+                                +51 924 221 553
                             </a>
                         </div>
                     </li>

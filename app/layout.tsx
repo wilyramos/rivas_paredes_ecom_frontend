@@ -1,81 +1,14 @@
 //File: frontend/app/layout.tsx
 
-import type { Metadata } from "next";
 import "./globals.css";
-import { Inter } from "next/font/google";
 import { Toaster } from 'sonner';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import MercadoPagoProvider from "@/components/provider/MercadoPagoProvider";
 
-const inter = Inter({
-    subsets: ["latin"],
-});
 
-export const metadata: Metadata = {
-    metadataBase: new URL("https://gophone.pe"),
-    title: {
-        default: "GoPhone | iPhones, Accesorios y Tecnología en Perú",
-        template: "%s | GoPhone"
-    },
-    description:
-        "iPhones, accesorios, repuestos y tecnología con envío rápido en Perú. GoPhone: calidad, garantía y atención personalizada desde Cañete.",
-    keywords: [
-        "GoPhone",
-        "iPhone Perú",
-        "Apple",
-        "Accesorios iPhone",
-        "Tecnología",
-        "Repuestos iPhone",
-        "Tienda online",
-        "Cañete",
-        "San Vicente",
-        "Imperial",
-        "Asia",
-        "Lunahuana",
-        "Electrónica",
-        "Smartphones",
-        "Gadgets",
-        "Ofertas",
-        "Promociones",
-        "Envío rápido",
-        "Garantía"
-    ],
-    authors: [{ name: "GoPhone", url: "https://gophone.pe" }],
-    creator: "GoPhone",
-    openGraph: {
-        title: "GoPhone | Tu tienda de iPhones y Tecnología en Perú",
-        description:
-            "Compra iPhones, accesorios y repuestos con garantía y envío rápido. GoPhone: tecnología confiable desde Cañete para todo el Perú.",
-        url: "https://gophone.pe",
-        siteName: "GoPhone",
-        locale: "es_PE",
-        type: "website",
-        images: [
-            {
-                url: "https://gophone.pe/logob.svg",
-                width: 1200,
-                height: 630,
-                alt: "GoPhone Perú - iPhones y Tecnología"
-            }
-        ]
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "GoPhone Perú | iPhones y Tecnología",
-        description:
-            "Tecnología con garantía, precios competitivos y atención personalizada. Compra iPhones y accesorios con envío rápido.",
-        images: ["https://gophone.pe/logomini.svg"]
-    },
-    icons: {
-        icon: "/logobw.jpg",
-        apple: "/logobw.jpg",
-        shortcut: "/logobw.jpg"
-    },
-    alternates: {
-        canonical: "https://gophone.pe"
-    },
-    category: "technology"
-};
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({ subsets: ["latin"], weight: ["300","400","500","600","700"] });
 
 export default function RootLayout({
     children,
@@ -87,15 +20,18 @@ export default function RootLayout({
     return (
         <html lang="es">
             <body
-                className={`${inter.className} bg-gray-50 text-gray-900`}
+                className={`${roboto.className}`}
             >
                 <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || ""}>
                     <MercadoPagoProvider />
                     {children}
                     <Toaster
-                        richColors
+                        theme="light"
+                        style={{
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            color: '#FFFFFF',
+                        }}
                         toastOptions={{
-                            className: "bg-gray-800 text-white",
                         }}
                         expand
                         duration={5000}

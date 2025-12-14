@@ -56,14 +56,9 @@ export default function ProductCard({ product }: { product: ProductResponse }) {
         setStartX(null);
     };
 
-    // Discounted price calculation in percentage
-    const discountedPrice = product.precioComparativo
-        ? ((product.precioComparativo - precio) / product.precioComparativo) * 100
-        : 0;
-
     return (
         <div
-            className="group relative flex flex-col transform transition-transform duration-500 hover:scale-[1.01] overflow-visible bg-white"
+            className="group relative flex flex-col transform transition-transform duration-500 hover:scale-[1.01] bg-white"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onTouchStart={handleTouchStart}
@@ -72,11 +67,12 @@ export default function ProductCard({ product }: { product: ProductResponse }) {
             onMouseUp={handleMouseUp}
         >
             <Link href={`/productos/${product.slug}`} className="flex flex-col h-full">
+
                 {/* Imagen */}
                 <div className="relative w-full aspect-square bg-white overflow-hidden rounded-t">
                     {imagenes.length > 0 ? (
-                        <div className="relative w-full h-full bg-white overflow-hidden">
-                            {/* Contenedor de todas las imágenes deslizables */}
+                        <div className="relative w-full h-full">
+                            {/* Carrusel */}
                             <div
                                 className="flex w-full h-full transition-transform duration-500 ease-in-out"
                                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -87,47 +83,29 @@ export default function ProductCard({ product }: { product: ProductResponse }) {
                                             src={img}
                                             alt={`${product.nombre} ${idx + 1}`}
                                             fill
-                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                             className="object-cover"
-                                            quality={70}
+                                            quality={80}
                                         />
                                     </div>
                                 ))}
                             </div>
 
+                            {/* Flechas */}
                             {imagenes.length > 1 && (
                                 <>
                                     <button
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            prevImage();
-                                        }}
+                                        onClick={(e) => { e.preventDefault(); prevImage(); }}
                                         className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white p-1.5 rounded-full opacity-0 md:group-hover:opacity-100 transition"
-                                        aria-label="Imagen anterior"
                                     >
                                         <ChevronLeft size={15} />
                                     </button>
 
                                     <button
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            nextImage();
-                                        }}
+                                        onClick={(e) => { e.preventDefault(); nextImage(); }}
                                         className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white p-1.5 rounded-full opacity-0 md:group-hover:opacity-100 transition"
-                                        aria-label="Siguiente imagen"
                                     >
                                         <ChevronRight size={15} />
                                     </button>
-
-                                    <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1">
-                                        {imagenes.map((_, idx) => (
-                                            <span
-                                                key={idx}
-                                                className={`h-1.5 w-2 rounded-full transition-colors duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100 ${idx === currentIndex ? "bg-black" : "bg-black/40"
-                                                    }`}
-                                            />
-                                        ))}
-                                    </div>
                                 </>
                             )}
                         </div>
@@ -137,47 +115,30 @@ export default function ProductCard({ product }: { product: ProductResponse }) {
                         </div>
                     )}
 
-                    {(product.esNuevo || product.precioComparativo) && (
-                        <div className="absolute top-4 left-2 right-2 flex justify-between items-start text-[13px] font-semibold">
-                            {product.esNuevo && (
-                                <span className="px-2 py-0.5 bg-black text-white text-[10px] md:text-xs">
-                                    Nuevo
-                                </span>
-                            )}
-                            {product.precioComparativo && (
-                                <span className="px-2 py-0.5 bg-black text-white text-[10px] md:text-xs ml-auto">
-                                    -{Math.round(discountedPrice)}%
-                                </span>
-                            )}
-                        </div>
-                    )}
+                
                 </div>
 
 
-                {/* --- SECCIÓN DE INFO CORREGIDA --- */}
-                <div className="flex flex-col flex-1 p-2">
-                    {/* Contenedor para marca y nombre */}
-                    <div>
-                        {/* Fila 1: Marca */}
-                        <div className="h-5"> {/* Altura fija para la marca */}
-                            <span className="text-xs font-medium text-gray-400 uppercase">
-                                {product.brand?.nombre}
-                            </span>
-                        </div>
+                {/* Información */}
+                <div className="flex flex-col flex-1 p-3">
 
-                        {/* Fila 2, 3, 4: Nombre del Producto */}
-                        <h3
-                            className=" text-xs md:text-sm text-gray-800 font-normal leading-snug line-clamp-3 h-[4.5rem] md:h-[5rem]" // 2. Altura fija
-                        >
-                            {product.nombre}
-                        </h3>
+                    {/* Marca (si no existe, se reserva el espacio igual) */}
+                    <div className="h-5 flex items-center">
+                        <span className="text-[11px] tracking-wide uppercase text-[#c79748] font-medium">
+                            {product.brand?.nombre || ""}
+                        </span>
                     </div>
 
-                    {/* Fila 5: Precios y color (empujado hacia abajo) */}
-                    {/* 3. mt-auto empuja este div hasta el final del contenedor flex-col */}
-                    <div className="flex items-center gap-2 mt-auto pt-1">
+                    {/* Nombre del producto */}
+                    <h3 className="text-sm font-light text-black leading-snug line-clamp-3 h-[3.8rem]">
+                        {product.nombre}
+                    </h3>
+
+                    {/* Precio */}
+                    <div className="mt-auto pt-2 flex items-center justify-between">
                         {color && <ColorCircle color={color} size={12} />}
-                        <div className="ml-auto flex flex-col items-end leading-tight">
+
+                        <div className="flex flex-col items-end leading-tight">
                             {stock > 0 ? (
                                 <>
                                     <div>
@@ -200,4 +161,5 @@ export default function ProductCard({ product }: { product: ProductResponse }) {
             </Link>
         </div>
     );
+
 }

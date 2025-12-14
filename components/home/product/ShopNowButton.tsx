@@ -54,8 +54,8 @@ export default function ShopNowButton({ product, variant, disabled }: Props) {
                 w-full px-6 py-2 rounded font-medium flex items-center justify-center gap-2 text-sm
                 transition duration-200 transform
                 ${isVisuallyDisabled
-                    ? 'bg-gray-300 text-gray-600 cursor-not-allowed opacity-90'
-                    : 'bg-gray-800 text-white hover:bg-gray-700 hover:scale-105 cursor-pointer'}
+                    ? 'bg-gray-300 text-amber-200 cursor-not-allowed opacity-90'
+                    : 'bg-amber-50 text-black hover:bg-amber-100 cursor-pointer'}
             `}
         >
             <IoBagCheckOutline size={20} />

@@ -83,7 +83,7 @@ export default function ColorCircle({
         "azul sierra": "bg-[#4682B4]",
         "titanio natural": "bg-[#B0B0B0]",
         "gris titanio": "bg-[#4B4B4B]",
-                morado: "bg-[#6A0DAD]",
+        morado: "bg-[#6A0DAD]",
         "morado claro": "bg-[#B19CD9]",
         "morado oscuro": "bg-[#4B0082]",
         "morado pastel": "bg-[#C8A2C8]",
@@ -171,16 +171,26 @@ export default function ColorCircle({
     };
 
     const hexClass = diccionarioColores[color.trim().toLowerCase()] ?? "bg-[#CCCCCC]";
-    const dim = size ?? 16;
+    const dim = size ?? 20;
 
     return (
         <div
-            title={color}
-            className={cn(
-                "rounded-full shadow-lg border border-gray-200 hover:scale-105 transition-transform duration-150",
-                hexClass
-            )}
-            style={{ width: dim, height: dim }}
-        />
+            className="
+      grid place-items-center
+      w-7 h-7
+      rounded-full
+      border border-gray-300
+    "
+        >
+            <div
+                title={color}
+                className={cn(
+                    "rounded-full border border-gray-300 shadow-sm transition-transform duration-150 hover:scale-105",
+                    hexClass
+                )}
+                style={{ width: dim, height: dim }}
+            />
+        </div>
     );
+
 }

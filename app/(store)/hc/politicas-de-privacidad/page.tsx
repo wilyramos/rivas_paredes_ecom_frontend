@@ -1,5 +1,4 @@
 //File: frontend/app/%28store%29/hc/politicas-de-privacidad/page.tsx
-import type { Metadata } from "next";
 import {
     Shield,
     User,
@@ -9,48 +8,6 @@ import {
     FileCheck,
 } from "lucide-react";
 import Link from "next/link";
-
-export const metadata: Metadata = {
-    title: "Políticas de Privacidad | Gophone Perú",
-    description:
-        "Conoce cómo Gophone recopila, utiliza y protege tu información personal. Transparencia en el tratamiento de datos según las normas de protección vigentes en Perú.",
-    keywords: [
-        "políticas de privacidad",
-        "protección de datos",
-        "privacidad Gophone",
-        "datos personales",
-        "información del cliente",
-        "seguridad de datos",
-        "Gophone Perú"
-    ],
-    openGraph: {
-        title: "Políticas de Privacidad | Gophone Perú",
-        description:
-            "Información clara y detallada sobre cómo Gophone protege tus datos personales conforme a la normativa peruana.",
-        url: "https://gophone.pe/hc/politicas-de-privacidad",
-        siteName: "Gophone Perú",
-        type: "article",
-        images: [
-            {
-                url: "https://gophone.pe/logoapp.svg", // puedes pedir una imagen y te la genero
-                width: 1200,
-                height: 630,
-                alt: "Políticas de Privacidad - Gophone Perú",
-            },
-        ],
-    },
-    robots: {
-        index: true,
-        follow: true,
-    },
-    alternates: {
-        canonical: "https://gophone.pe/hc/politicas-de-privacidad",
-    },
-    authors: [{ name: "Gophone Perú" }],
-    creator: "Gophone Perú",
-    publisher: "Gophone Perú",
-};
-
 
 export default function PoliticasPrivacidadPage() {
     return (
@@ -146,7 +103,7 @@ export default function PoliticasPrivacidadPage() {
 
                 <ul className="text-sm text-gray-700 space-y-2">
                     <li><b>Email:</b> contacto@gophone.pe</li>
-                    <li><b>WhatsApp:</b> +51 925 054 636</li>
+                    <li><b>WhatsApp:</b> +51 924 221 553</li>
                 </ul>
             </div>
 

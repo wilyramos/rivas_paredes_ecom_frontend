@@ -20,11 +20,8 @@ export default function Advertisement() {
             id: 1,
             icon: <Truck className="w-3 h-3 text-white" />,
             text: (
-                <span className="flex items-center gap-2">
-                    Envíos en <span className="font-bold text-white">Cañete</span>
-                    <span className="bg-red-600 text-white text-[10px] uppercase font-bold px-2 py-0.5 rounded-full tracking-wider">
-                        Gratis
-                    </span>
+                <span>
+                    Envíos <span className="font-bold text-white">rápidos a todo el Perú</span>
                 </span>
             ),
         },
@@ -32,7 +29,7 @@ export default function Advertisement() {
             id: 2,
             text: (
                 <span>
-                    Envíos a <span className="font-bold text-white">todo el Perú</span>
+                    Hecho a mano en <span className="font-bold text-white">cuero legítimo</span>
                 </span>
             ),
         },
@@ -47,14 +44,32 @@ export default function Advertisement() {
         },
         {
             id: 4,
+            text: (
+                <span>
+                    Diseños en <span className="font-bold text-white">billeteras, carteras, mochilas y más</span>
+                </span>
+            ),
+        },
+        {
+            id: 5,
             icon: <Store className="w-3 h-3 text-white" />,
             text: (
                 <span>
-                    Recoge en <span className="font-bold text-white">tienda física</span> sin costo
+                    Marca Rivas Paredes · <span className="font-bold text-white">Calidad & Estilo</span>
+                </span>
+            ),
+        },
+        {
+            id: 6,
+            text: (
+                <span>
+                    Atención 100% <span className="font-bold text-white">online</span>
                 </span>
             ),
         },
     ];
+
+
 
     if (!isVisible) return null;
 

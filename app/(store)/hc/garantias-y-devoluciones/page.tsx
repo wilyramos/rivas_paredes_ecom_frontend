@@ -4,51 +4,6 @@
 import { ShieldCheck, Undo2 } from "lucide-react";
 import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import Link from "next/link";
-import type { Metadata } from "next";
-
-
-export const metadata: Metadata = {
-    title: "Garantías y Devoluciones | Gophone",
-    description:
-        "Consulta las políticas de garantías y devoluciones de Gophone. Conoce los plazos, requisitos y proceso para cambios, reembolsos y productos con fallas de fábrica.",
-    keywords: [
-        "garantías",
-        "política de devoluciones",
-        "cambios de producto",
-        "reembolsos",
-        "fallas de fábrica",
-        "Gophone",
-        "soporte técnico",
-        "devolución de productos",
-        "compras online"
-    ],
-    openGraph: {
-        title: "Garantías y Devoluciones | Gophone",
-        description:
-            "Revisa nuestras políticas de garantías, devoluciones y reembolsos. Información clara para asegurar tu satisfacción al comprar en Gophone.",
-        url: "https://gophone.pe/hc/garantias-y-devoluciones",
-        siteName: "Gophone",
-        type: "article",
-        images: [
-            {
-                url: "https://gophone.pe/logoapp.svg", // Si quieres, te genero esta imagen también
-                width: 1200,
-                height: 630,
-                alt: "Garantías y Devoluciones - Gophone",
-            },
-        ],
-    },
-    robots: {
-        index: true,
-        follow: true,
-    },
-    alternates: {
-        canonical: "https://gophone.pe/hc/garantias-y-devoluciones",
-    },
-    authors: [{ name: "Gophone" }],
-    creator: "Gophone",
-    publisher: "Gophone",
-};
 
 
 export default function GarantiasDevolucionesPage() {
@@ -148,12 +103,12 @@ export default function GarantiasDevolucionesPage() {
                     <li className="flex items-center gap-2">
                         <FaWhatsapp className="text-green-600 w-5 h-5" />
                         <a
-                            href="https://api.whatsapp.com/send?phone=51925054636&text=Hola%20Gophone,%20tengo%20una%20consulta"
+                            href="https://api.whatsapp.com/send?phone=51924221553&text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20garant%C3%ADas%20y%20devoluciones"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:underline"
                         >
-                            +51 925 054 636
+                            +51 924 221 553
                         </a>
                     </li>
 

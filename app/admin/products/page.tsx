@@ -6,7 +6,7 @@ import SpinnerLoading from "@/components/ui/SpinnerLoading";
 // Admin
 import AddProductButton from "@/components/admin/products/AddProductButton";
 import ProductSearchInput from "@/components/admin/products/ProductSearchInput";
-import ProductsResultsAdmin from "@/components/admin/products/ProductsResult";
+import ProductsResult from "@/components/admin/products/ProductsResult";
 import AdminPageWrapper from "@/components/admin/AdminPageWrapper";
 
 type SearchParams = Promise<{
@@ -36,7 +36,7 @@ export default async function ProductsPage({
             }
         >
             <Suspense fallback={<SpinnerLoading />}>
-                <ProductsResultsAdmin
+                <ProductsResult
                     currentPage={currentPage}
                     itemsPerPage={itemsPerPage}
                     params={params}
