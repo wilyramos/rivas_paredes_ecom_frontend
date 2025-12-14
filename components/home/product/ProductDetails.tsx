@@ -10,7 +10,6 @@ import ProductExpandableSections from './ProductExpandableSections ';
 import PaymentMethods from '../PaymentMethods';
 
 import type { ProductWithCategoryResponse, TApiVariant } from '@/src/schemas';
-import { getDeliveryRange } from '@/lib/utils';
 
 import {
     Select,
@@ -142,43 +141,17 @@ export default function ProductDetails({ producto }: Props) {
 
     return (
         <>
-            <article className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 max-w-7xl mx-auto ">
+            <article className="grid grid-cols-1 lg:grid-cols-12 gap-2 lg:gap-4 max-w-7xl mx-auto ">
                 <div className="lg:col-span-8">
                     <ImagenesProductoCarousel images={variantImages} />
                 </div>
 
                 <section className="lg:col-span-4 sticky top-24 self-start">
-                    <div className="bg-white space-y-6">
+                    <div className="bg-white space-y-2">
                         <header className="space-y-4 border-b border-gray-100 pb-6">
                             <h1 className="text-2xl font-semibold tracking-tight text-gray-900">
                                 {producto.nombre}
                             </h1>
-                            <div className="flex items-end gap-4">
-                                <p className="text-3xl font-semibold tracking-tight">
-                                    <span className="text-sm mr-1">S/</span>
-                                    {precio.toFixed(2)}
-                                </p>
-
-                                {precioComparativo && precioComparativo > precio && (
-                                    <div className="flex items-center gap-2">
-                                        <span className="line-through text-gray-400 text-sm">
-                                            S/ {precioComparativo.toFixed(2)}
-                                        </span>
-                                        <span className="bg-gray-900 text-white text-xs px-2 py-1 ">
-                                            -{Math.round(((precioComparativo - precio) / precioComparativo) * 100)}%
-                                        </span>
-                                    </div>
-                                )}
-                                {stock > 0 ? (
-                                    <span className="ml-auto ">
-
-                                    </span>
-                                ) : (
-                                    <span className="ml-auto text-sm text-red-600 font-medium">
-                                        Agotado
-                                    </span>
-                                )}
-                            </div>
 
                             <div className="flex items-center justify-between text-xs text-gray-500">
                                 {producto.brand && (
@@ -192,6 +165,36 @@ export default function ProductDetails({ producto }: Props) {
 
 
                             </div>
+                            <div className="flex items-center gap-3 text-sm">
+                                <div className="flex items-end gap-1">
+                                    <span className="text-xs">S/</span>
+                                    <span className="text-2xl font-semibold tracking-tight">
+                                        {precio.toFixed(2)}
+                                    </span>
+                                </div>
+
+                                {precioComparativo && precioComparativo > precio && (
+                                    <>
+                                        <span className="line-through text-gray-400">
+                                            S/ {precioComparativo.toFixed(2)}
+                                        </span>
+                                        <span className="bg-yellow-100 text-black font-semibold px-2 py-0.5 rounded">
+                                            -{Math.round(((precioComparativo - precio) / precioComparativo) * 100)}%
+                                        </span>
+                                    </>
+                                )}
+
+                                <span className="ml-auto font-medium">
+                                    {stock > 0 ? (
+                                        <></>
+                                    ) : (
+                                        <span className="text-red-600">Agotado</span>
+                                    )}
+                                </span>
+                            </div>
+
+
+
                         </header>
 
                         {Object.entries(allAttributes).map(([key]) => {
@@ -313,11 +316,11 @@ export default function ProductDetails({ producto }: Props) {
                                     <p>
                                         Envíos a todo el Perú
                                     </p>
-                                    <p className="inline-block rounded-full border border-gray-200 px-4 py-1 text-[12px] text-gray-600">
+                                    {/* <p className="inline-block border border-gray-200 px-4 py-1 text-[12px] text-gray-600">
                                         {producto.diasEnvio
                                             ? `Recíbelo entre: ${getDeliveryRange(producto.diasEnvio)}`
                                             : 'Recíbelo en 1–3 días hábiles'}
-                                    </p>
+                                    </p> */}
                                 </div>
 
                                 <div className="h-px bg-gray-100" />

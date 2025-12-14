@@ -47,7 +47,7 @@ export default function ImagenesProductoCarousel({ images }: { images: string[] 
             {/* Escritorio */}
             <div className="hidden md:block">
                 {imgList.length === 1 ? (
-                    <div className="relative aspect-[4/5] w-full overflow-hidden bg-slate-100">
+                    <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#f6f6f6]">
                         <Image
                             src={imgList[0]}
                             alt="Imagen única"
@@ -59,7 +59,7 @@ export default function ImagenesProductoCarousel({ images }: { images: string[] 
                 ) : (
                     <div className="grid grid-cols-2 gap-4">
                         {imgList.map((img, idx) => (
-                            <div key={idx} className="relative aspect-[4/5] w-full overflow-hidden bg-white">
+                            <div key={idx} className="relative aspect-[4/5] w-full overflow-hidden bg-[#f6f6f6]">
                                 <Image
                                     src={img}
                                     alt={`Imagen ${idx + 1}`}
@@ -76,7 +76,7 @@ export default function ImagenesProductoCarousel({ images }: { images: string[] 
             {/* Móvil */}
             <div className="md:hidden">
                 <div
-                    className={`relative aspect-square overflow-hidden bg-white ${
+                    className={`relative aspect-square overflow-hidden bg-[#f6f6f6] ${
                         zoom ? "cursor-zoom-out" : "cursor-zoom-in"
                     }`}
                     onMouseMove={handleMouseMove}
