@@ -104,12 +104,12 @@ export default function FiltrosClient({ categorySlug, attributes }: Props) {
             </div>
             {/* ----- Filtro por Precio con inputs ----- */}
             <div className="mb-4">
-                <h2 className="text-sm font-medium text-gray-50 mb-1">Precio</h2>
+                <h2 className="text-sm font-medium  mb-1">Precio</h2>
                 <div
                     className="flex flex-row gap-2 "
                 >
                     {/* Input Mín */}
-                    <div className="flex flex-col text-sm text-gray-50 w-full sm:w-auto px-4">
+                    <div className="flex flex-col text-sm  w-full sm:w-auto px-4">
                         <Label htmlFor="min" className="mb-1 text-xs font-semibold">
                             Mín
                         </Label>
@@ -122,10 +122,10 @@ export default function FiltrosClient({ categorySlug, attributes }: Props) {
                         />
                     </div>
 
-                    <span className="text-gray-500 md:mt-5">-</span>
+                    <span className="0 md:mt-5">-</span>
 
                     {/* Input Máx */}
-                    <div className="flex flex-col text-sm text-gray-50 w-full sm:w-auto">
+                    <div className="flex flex-col text-sm  w-full sm:w-auto">
                         <Label htmlFor="max" className="mb-1 text-xs font-semibold">
                             Máx
                         </Label>
@@ -146,17 +146,17 @@ export default function FiltrosClient({ categorySlug, attributes }: Props) {
                 {attributes.map((attr) => (
                     <AccordionItem key={attr.name} value={attr.name}>
                         <AccordionTrigger
-                            className="text-sm font-normal text-gray-50 hover:bg-gray-700 py-2 px-2 rounded-md"
+                            className="text-sm font-normal  hover:bg-gray-200 py-2 px-2 rounded-md"
                         >
                             {attr.name.charAt(0).toUpperCase() + attr.name.slice(1).toLowerCase()}
                         </AccordionTrigger>
-                        <AccordionContent className="pl-2 pt-2 text-sm text-gray-50">
+                        <AccordionContent className="pl-2 pt-2 text-sm ">
                             <ul className="space-y-1">
                                 {attr.values.map((value) => (
                                     <li
                                         key={value}
                                         onClick={() => toggleCheckboxValue(attr.name, value)}
-                                        className="flex items-center gap-2 hover:bg-gray-700 px-2 cursor-pointer py-1 rounded-md select-none"
+                                        className="flex items-center gap-2 hover:bg-gray-200 px-2 cursor-pointer py-1 rounded-md select-none"
                                     >
                                         <input
                                             type="checkbox"
@@ -164,7 +164,7 @@ export default function FiltrosClient({ categorySlug, attributes }: Props) {
                                             readOnly
                                             className="accent-blue-600 pointer-events-none"
                                         />
-                                        <span className="text-sm text-gray-50">{value}</span>
+                                        <span className="text-sm ">{value}</span>
                                     </li>
                                 ))}
                             </ul>
