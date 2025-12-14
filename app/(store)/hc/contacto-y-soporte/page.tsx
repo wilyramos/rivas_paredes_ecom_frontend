@@ -21,7 +21,7 @@ export default function ContactoSoportePage() {
             <div className="bg-white rounded-xl p-5 shadow-sm space-y-4">
                 <p className="text-gray-700 text-sm leading-relaxed">
                     Si necesitas ayuda, tienes una consulta o requieres soporte con tu pedido,
-                    en <b>Gophone</b> estamos listos para ayudarte. Puedes comunicarte con nosotros
+                    en <b>Rivas Paredes</b> estamos listos para ayudarte. Puedes comunicarte con nosotros
                     mediante los siguientes canales:
                 </p>
             </div>
@@ -57,10 +57,10 @@ export default function ContactoSoportePage() {
                         <div>
                             <p className="font-medium">Correo electrónico</p>
                             <a
-                                href="mailto:contacto@gophone.pe"
+                                href="mailto:contacto@rivasparedes.pe"
                                 className="text-black hover:underline"
                             >
-                                contacto@gophone.pe
+                                contacto@rivasparedes.pe
                             </a>
                         </div>
                     </li>

@@ -22,7 +22,7 @@ export default function PoliticasPrivacidadPage() {
             {/* Intro */}
             <div className="bg-white rounded-xl p-5 shadow-sm space-y-4">
                 <p className="text-gray-700 text-sm leading-relaxed">
-                    En <b>Gophone</b> valoramos tu privacidad y protegemos tus datos personales.
+                    En <b>Rivas Paredes</b> valoramos tu privacidad y protegemos tus datos personales.
                     Esta política explica cómo recopilamos, utilizamos y resguardamos tu información
                     al usar nuestra tienda online.
                 </p>
@@ -102,7 +102,7 @@ export default function PoliticasPrivacidadPage() {
                 </p>
 
                 <ul className="text-sm text-gray-700 space-y-2">
-                    <li><b>Email:</b> contacto@gophone.pe</li>
+                    <li><b>Email:</b> contacto@rivasparedes.pe</li>
                     <li><b>WhatsApp:</b> +51 924 221 553</li>
                 </ul>
             </div>

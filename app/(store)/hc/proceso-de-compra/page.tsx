@@ -20,7 +20,7 @@ export default function ProcesoCompraPage() {
             {/* Intro */}
             <div className="bg-white rounded-xl p-5 shadow-sm space-y-4">
                 <p className="text-gray-700 text-sm leading-relaxed">
-                    Comprar en <b>Gophone</b> es rápido, seguro y sencillo. A continuación te
+                    Comprar en <b>Rivas Paredes</b> es rápido, seguro y sencillo. A continuación te
                     explicamos paso a paso cómo realizar tu pedido.
                 </p>
             </div>
@@ -116,7 +116,7 @@ export default function ProcesoCompraPage() {
             </div>
 
             <p className="text-[11px] text-gray-400 italic text-center">
-                Gracias por confiar en Gophone.
+                Gracias por confiar en Rivas Paredes.
             </p>
 
             {/* Botón volver */}

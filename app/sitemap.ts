@@ -16,7 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     return [
         {
-            url: "https://www.gophone.pe",
+            url: "https://www.rivasparedes.pe",
             lastModified: new Date(),
             changefreq: "weekly",
             priority: 1,

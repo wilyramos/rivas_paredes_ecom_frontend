@@ -18,7 +18,7 @@ export default function GarantiasDevolucionesPage() {
             {/* Introducción */}
             <div className="bg-white rounded-xl p-5 shadow-sm space-y-4">
                 <p className="text-gray-700 text-sm leading-relaxed">
-                    En <b>Gophone</b>, tu satisfacción es nuestra prioridad. Te recomendamos revisar tu producto apenas lo recibas para asegurarte de que esté en perfectas condiciones.
+                    En <b>Rivas Paredes</b>, tu satisfacción es nuestra prioridad. Te recomendamos revisar tu producto apenas lo recibas para asegurarte de que esté en perfectas condiciones.
                 </p>
 
                 <div className="flex items-start gap-3">
@@ -114,8 +114,8 @@ export default function GarantiasDevolucionesPage() {
 
                     <li className="flex items-center gap-2">
                         <FaEnvelope className="w-5 h-5" />
-                        <a href="mailto:ventas@gophone.pe" className="hover:underline">
-                            ventas@gophone.pe
+                        <a href="mailto:ventas@rivasparedes.pe" className="hover:underline">
+                            ventas@rivasparedes.pe
                         </a>
                     </li>
 

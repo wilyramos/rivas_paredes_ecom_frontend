@@ -48,7 +48,7 @@ export default function ErrorClient({ errorMessage, orderId }: ErrorClientProps)
                 </div>
 
                 <div className="mt-8 text-xs text-gray-500">
-                    Si el problema persiste, por favor, <a href="mailto:soporte@gophone.pe" className="text-blue-600 hover:underline">contacta a soporte</a>.
+                    Si el problema persiste, por favor, <a href="mailto:soporte@rivasparedes.pe" className="text-blue-600 hover:underline">contacta a soporte</a>.
                     O puedes contactar a nuestro whatsapp al <a href="https://wa.me/51924221553" className="text-blue-600 hover:underline">+51 924 221 553</a>.
                 </div>
             </div>

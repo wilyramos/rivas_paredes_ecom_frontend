@@ -58,7 +58,7 @@ export default function ProductExpandableSections({ producto }: Props) {
                 <AccordionContent>
                     <div className="text-gray-700 text-sm space-y-4 mx-auto lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0">
                         <div className="space-y-3">
-                            <p><strong>En GoPhone lo hacemos fácil</strong></p>
+                            <p><strong>En Rivas Paredes lo hacemos fácil</strong></p>
 
                             <ul className="list-disc list-inside space-y-1">
                                 <li>Envío con tarifa única.</li>
